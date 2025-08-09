@@ -1,177 +1,113 @@
-In this project, let's build an **Emoji Game** by applying the concepts we have learned till now.
+# 🎯 Emoji Game
 
-### Refer to the image below:
+An interactive memory game built with **React.js** where players must click on emojis without repeating any selection.  
+If all emojis are clicked exactly once, you win. If you click the same emoji twice, you lose.
 
-<br/>
-<div style="text-align: center;">
-    <img src="https://assets.ccbp.in/frontend/content/react-js/emoji-game-output-v2.gif" alt="emoji-game-output" style="max-width:70%;box-shadow:0 2.8px 2.2px rgba(0, 0, 0, 0.12)">
-</div>
-<br/>
+---
 
-### Design Files
+## 🌐 Live Demo
 
-<details>
-<summary>Click to view</summary>
+🔗 [Play Emoji Game](https://MariEmoji.ccbp.tech)
 
-- [Extra Small (Size < 576px), Small (Size >= 576px)](https://assets.ccbp.in/frontend/content/react-js/emoji-game-sm-outputs.png)
-- [Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px) - Game View](https://assets.ccbp.in/frontend/content/react-js/emoji-game-lg-output-v2.png)
-- [Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px) - Won Game](https://assets.ccbp.in/frontend/content/react-js/emoji-game-won-game-lg-output.png)
-- [Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px) - Lose Game](https://assets.ccbp.in/frontend/content/react-js/emoji-game-lose-game-lg-output.png)
+---
 
-</details>
+## 📸 Demo
 
-### Set Up Instructions
+![Emoji Game Demo](https://assets.ccbp.in/frontend/content/react-js/emoji-game-output-v2.gif)
 
-<details>
-<summary>Click to view</summary>
+---
 
-- Download dependencies by running `npm install`
-- Start up the app using `npm start`
-</details>
+## 🚀 Features
 
-### Completion Instructions
+- 🏆 Track **Current Score** and **Top Score**
+- 🎮 Win or Lose detection
+- 🔄 "Play Again" functionality
+- 🎨 Responsive design for mobile & desktop
+- ✨ Emojis shuffle after every click
+- ♻️ Built using reusable React components
 
-<details>
-<summary>Functionality to be added</summary>
-<br/>
+---
 
-The app must have the following functionalities
+## 📂 Project Structure
 
-- Initially, the _Score_ and _Total Score_ for the current game should be **0**
-- When an **Emoji** is clicked,
+src/
+│
+├── components/
+│ ├── EmojiGame/ # Main game logic
+│ ├── NavBar/ # Navigation bar (logo, scores)
+│ ├── EmojiCard/ # Individual emoji cards
+│ └── WinOrLoseCard/ # Win/Lose result card
+│
+├── App.js
+└── index.js
 
-  - If it is not the same as any of the previously clicked emojis, then the _Score_ should be incremented by one
-  - If all the emojis are clicked exactly once
 
-    - [Won Game](https://assets.ccbp.in/frontend/content/react-js/emoji-game-won-game-lg-output.png) view should be displayed
+---
 
-  - If it is the same as any of the previously clicked emojis
-    - [Lose Game](https://assets.ccbp.in/frontend/content/react-js/emoji-game-lose-game-lg-output.png) view should be displayed
-  - If the score achieved in the current game is higher than the previous scores then the _Top Score_ should be updated accordingly
+## 🛠️ Tech Stack
 
-- When the _Play Again_ button is clicked, then we should be able to play the game again
-  - The _Score_ value should be reset but not the _Top Score_ value
-- The `EmojiGame` component receives the `emojisList` as a prop. It consists of a list of emoji objects with the following properties in each emoji object
+- **React.js** – UI framework
+- **CSS3** – Styling
+- **JavaScript (ES6+)** – Logic handling
 
-  |    Key    | Data Type |
-  | :-------: | :-------: |
-  |    id     |  Number   |
-  | emojiName |  String   |
-  | emojiUrl  |  String   |
+---
 
-</details>
+## 📦 Installation & Setup
 
-<details>
-<summary>Components Structure</summary>
+```bash
+# Clone the repository
+git clone https://github.com/your-username/emoji-game.git
 
-<br/>
-<div style="text-align: center;">
-    <img src="https://assets.ccbp.in/frontend/content/react-js/emoji-game-game-view-component-breakdown-structure.png" alt="emoji game view component breakdown structure" style="max-width:100%;box-shadow:0 2.8px 2.2px rgba(0, 0, 0, 0.12)">
-</div>
-<br/>
+# Navigate into the project folder
+cd emoji-game
 
-<div style="text-align: center;">
-    <img src="https://assets.ccbp.in/frontend/content/react-js/emoji-game-win-lose-component-breakdown-structure.png" alt="emoji game win or lose component breakdown structure" style="max-width:100%;box-shadow:0 2.8px 2.2px rgba(0, 0, 0, 0.12)">
-</div>
-<br/>
+# Install dependencies
+npm install
 
-</details>
+# Start development server
+npm start
 
-<details>
-<summary>Implementation Files</summary>
-<br/>
+🎯 How to Play
+Click on an emoji to increase your score.
 
-Use these files to complete the implementation:
+Don’t click the same emoji twice!
 
-- `src/components/EmojiGame/index.js`
-- `src/components/EmojiGame/index.css`
-- `src/components/NavBar/index.js`
-- `src/components/NavBar/index.css`
-- `src/components/EmojiCard/index.js`
-- `src/components/EmojiCard/index.css`
-- `src/components/WinOrLoseCard/index.js`
-- `src/components/WinOrLoseCard/index.css`
-</details>
+Click all emojis exactly once to win.
 
-### Quick Tips
+If you click a repeated emoji, you lose.
 
-<details>
-<summary>Click to view</summary>
-<br>
+Click "Play Again" to restart (Top Score remains saved).
 
-- You can use the `cursor` CSS property to specify the mouse cursor to be displayed when pointing over an element
+📌 Game Rules
+Clicking a new emoji → Score +1
 
-  ```
-    cursor: pointer;
-  ```
+Clicking a repeated emoji → Game Over
 
-  <br/>
-   <img src="https://assets.ccbp.in/frontend/content/react-js/cursor-pointer-img.png" alt="cursor pointer" style="width:100px" />
+Clicking all emojis once → You Win
 
-- You can use the below `outline` CSS property for buttons and input elements to remove the highlighting when the elements are clicked
+Top Score updates if the current score is higher than before.
 
-  ```
-    outline: none;
-  ```
+🎨 Design References
+Small Screens
 
-</details>
+Large Screens – Game View
 
-### Important Note
+Large Screens – Won Game
 
-<details>
-<summary>Click to view</summary>
+Large Screens – Lose Game
 
-<br/>
+📷 Assets Used
+Game Logo (alt: emoji logo)
 
-**The following instructions are required for the tests to pass**
+Won Game Image
 
-- The emojis should have the alt as the value of the key `emojiName` from each emoji object
+Lose Game Image
 
-</details>
+📜 License
+This project is licensed under the MIT License.
 
-### Resources
-
-<details>
-<summary>Image URLs</summary>
-
-- [https://assets.ccbp.in/frontend/react-js/game-logo-img.png](https://assets.ccbp.in/frontend/react-js/game-logo-img.png) alt should be **emoji logo**
-- [https://assets.ccbp.in/frontend/react-js/won-game-img.png](https://assets.ccbp.in/frontend/react-js/won-game-img.png)
-- [https://assets.ccbp.in/frontend/react-js/lose-game-img.png](https://assets.ccbp.in/frontend/react-js/lose-game-img.png)
-
-</details>
-
-<details>
-<summary>Colors</summary>
-
-<br/>
-
-<div style="background-color: #6a59ff ; width: 150px; padding: 10px; color: white">Hex: #6a59ff</div>
-<div style="background-color: #ffffff ; width: 150px; padding: 10px; color: black">Hex: #ffffff</div>
-<div style="background-color: #3d3d3d ; width: 150px; padding: 10px; color: white">Hex: #3d3d3d</div>
-
-#### Background Colors
-
-<div style="background-color: #9796f0 ; width: 150px; padding: 10px; color: white">Hex: #9796f0</div>
-<div style="background-color: #fbc7d4 ; width: 150px; padding: 10px; color: black">Hex: #fbc7d4</div>
-<div style="background-color: #ffffff33 ; width: 150px; padding: 10px; color: black">Hex: #ffffff33</div>
-<div style="background-color: #ffce27 ; width: 150px; padding: 10px; color: black">Hex: #ffce27</div>
-
-#### Border Colors
-
-<div style="background-color: #ffffff30 ; width: 150px; padding: 10px; color: black">Hex: #ffffff30</div>
-
-</details>
-
-<details>
-<summary>Font-families</summary>
-
-- Roboto
-
-</details>
-
-> ### _Things to Keep in Mind_
->
-> - All components you implement should go in the `src/components` directory.
-> - Don't change the component folder names as those are the files being imported into the tests.
-> - **Do not remove the pre-filled code**
-> - Want to quickly review some of the concepts you’ve been learning? Take a look at the Cheat Sheets.
+👨‍💻 Author
+Maridi Kumar Koneti
+💼 Passionate about building interactive web applications with React.
+📧 Contact: [maridikoneti@gmail.com]
+🌐 GitHub: https://github.com/Maridi99-coder
